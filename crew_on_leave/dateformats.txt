@@ -1,0 +1,11 @@
+--m+1 roster period
+select to_char(trunc(add_months(sysdate,1), 'MON'),'YYYYMMDDHH24MI') from dual; 
+select to_char(trunc(last_day(add_months(sysdate,1)),'DD'),'YYYYMMDD')||'2359' from dual;
+
+--m+2 roster period
+select to_char(trunc(add_months(sysdate,2), 'MON'),'YYYYMMDDHH24MI') from dual; 
+select to_char(trunc(last_day(add_months(sysdate,2)),'DD'),'YYYYMMDD')||'2359' from dual;
+
+--m+3 roster period
+select to_char(trunc(add_months(sysdate,3), 'MON'),'YYYYMMDDHH24MI') from dual; 
+select to_char(trunc(last_day(add_months(sysdate,3)),'DD'),'YYYYMMDD')||'2359' from dual;

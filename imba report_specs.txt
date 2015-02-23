@@ -1,0 +1,26 @@
+base: 
+crew categorized
+
+and has:
+all mandatory qualifications for to operate in that category 
+CC: and is not a stag for that category (ST32 etc)
+
+and not exist 
+(crew with number of leave days=number of month days)
+=
+
+end result is crew that have at least 1 rosterable day in the roster period.
+
+crew categorized - crew disqualified due to quals - crew on leave for all of the month
+
+to do:
+- test and expand on the not exists clause
+- apply the qual and leave addition to all CC run categories (one for each union) (correct ST32 to appropriate fleet, exclude for long haul fleet mixing runs)
+- generate excel for each for march (for Vitaly)
+- split each FD into FO/CPT unions
+- modify additions for FD with correct quals for each fleet
+- add to each union
+- test
+- generate excels for Vitaly
+- create a new rosterable crew script based on the crew_categorized script
+- test auto generation with +1, +2 and +3 parameters

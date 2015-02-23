@@ -1,0 +1,37 @@
+Availability lists - do not take into account missing quailfications or blocked rosters (refer to respective excel files)
+
+CC
+
+LH Pursers
+777, 330 Pursers: PA and (BCA, EC with P777 or P330)
+
+GMs
+770, 330 GMS: GM and (BCA, EC, with GM1 qual)
+
+LH BCA
+770, 330 BCA: BCA and (EC with BA1 qual)
+
+
+737 PA: PA and (BCA, EC with P737 qual)
+
+SU9 PA: PA and (BCA, EC with PSSJ qual)
+
+320 PA: PA and (BCA, EC with P320 qual)
+
+737 BCA
+
+737 EC
+
+SU9 EC
+
+320 BCA: BCA and (EC with BCA BA1 qual)
+
+320 EC
+
+FD
+
+737 - CPT, FO
+777 - CPT, FO
+320 - CPT, FO
+SU9 - CPT, FO
+330 - CPT, FO

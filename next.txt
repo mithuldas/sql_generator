@@ -1,0 +1,1 @@
+- crew_categorized - remove crew_v termination/empl status check and use crew_employment_status table for valid active record
