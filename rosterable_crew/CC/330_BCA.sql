@@ -153,18 +153,11 @@ WHERE A.STAFF_NUM = B.STAFF_NUM
 			)
 		AND TO_DATE(to_char(trunc(last_day(add_months(sysdate,&1)),'DD'),'YYYYMMDD')||'2359', 'YYYYMMDDHH24MI') > P.EFF_DT
 		)
-	AND A.STAFF_NUM IN (
-		SELECT STAFF_NUM
-		FROM CREW_QUALIFICATIONS_V
-		WHERE QUAL_CD IN (
-				'BA1'
-				)
-			AND (
+	and exists (select 1 from crew_qualifications_v q where q.staff_num=a.staff_num and qual_cd='BA1' AND (
 				(EXPIRY_DTS IS NULL)
 				OR EXPIRY_DTS > TO_DATE(to_char(trunc(add_months(sysdate,&1), 'MON'),'YYYYMMDDHH24MI'), 'YYYYMMDDHH24MI')
 				)
-			AND ISSUED_DTS < TO_DATE(to_char(trunc(last_day(add_months(sysdate,&1)),'DD'),'YYYYMMDD')||'2359', 'YYYYMMDDHH24MI')
-		) 
+			AND ISSUED_DTS < TO_DATE(to_char(trunc(last_day(add_months(sysdate,&1)),'DD'),'YYYYMMDD')||'2359', 'YYYYMMDDHH24MI'))		
     -- make sure that each crew has all the mandatory qualifications and expiry date is at least 05th of the month (i.e. 5 rosterable "qualification" days) and is not a STAG (ST**)    
     and exists (select 1 from crew_qualifications_v q where a.staff_num=q.staff_num and qual_cd='AC33' and q.expiry_dts>(TO_DATE(to_char(trunc(add_months(sysdate,&1), 'MON'),'YYYYMMDDHH24MI'), 'YYYYMMDDHH24MI') + 4 + 23/24 + 59/1440))
     and exists (select 1 from crew_qualifications_v q where a.staff_num=q.staff_num and qual_cd='E33' and q.expiry_dts>(TO_DATE(to_char(trunc(add_months(sysdate,&1), 'MON'),'YYYYMMDDHH24MI'), 'YYYYMMDDHH24MI') + 4 + 23/24 + 59/1440))
