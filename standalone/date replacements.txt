@@ -1,0 +1,5 @@
+select TO_DATE(to_char(trunc(add_months(sysdate,&1), 'MON'),'YYYYMMDDHH24MI'), 'YYYYMMDDHH24MI') from dual; /* replace with */ to_date((select dt from roster_str),'DDMONYY');
+select TO_DATE(to_char(trunc(last_day(add_months(sysdate,&1)),'DD'),'YYYYMMDD')||'2359', 'YYYYMMDDHH24MI') from dual; /* replace with */ (select end_dt from roster_end);
+select to_date(to_char(trunc(last_day(add_months(sysdate,&1)),'DD'),'YYYYMMDD')||'2359','YYYYMMDDHH24MI') from dual;/* replace with */ (select end_dt from roster_end);
+select to_date(to_char(trunc(add_months(sysdate,&1), 'MON'),'YYYYMMDDHH24MI'),'YYYYMMDDHH24MI') from dual; /* replace with */ to_date((select dt from roster_str),'DDMONYY');
+select to_char(trunc(last_day(add_months(sysdate,&1)),'DD'),'DD') from dual; /* replace with */ to_char((select end_dt from roster_end),'DD');
